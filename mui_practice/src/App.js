@@ -8,7 +8,7 @@ function App() {
 
   return (
     <Box sx={{ bgcolor: "red" }}>
-      <Navbar></Navbar>
+      <Navbar/>
       <Stack direction="row" spacing={1} justifyContent="space-between">
         <Sidebar flex={1} ></Sidebar>
         <Feed flex={4}></Feed>
