@@ -7,7 +7,7 @@ const Rightbar = ({ flex }) => {
       sx={{ bgcolor: "blue", p: 2, display: { xs: "none", sm: "block" } }}
       flex={flex}
     >
-      RightBar
+      
     </Box>
   );
 };

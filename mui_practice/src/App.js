@@ -7,7 +7,7 @@ import { Stack } from "@mui/material";
 function App() {
 
   return (
-    <Box sx={{ bgcolor: "red" }}>
+    <Box >
       <Navbar/>
       <Stack direction="row" spacing={1} justifyContent="space-between">
         <Sidebar flex={1} ></Sidebar>
