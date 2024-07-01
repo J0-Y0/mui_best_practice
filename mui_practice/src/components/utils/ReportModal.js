@@ -19,8 +19,11 @@ import {
   Report,
   ReportProblem,
 } from "@mui/icons-material";
+import { useTheme } from "@emotion/react";
 
 const ReportModal = ({ open, onClose }) => {
+      const theme = useTheme();
+
     const StyledModal = styled(Modal)({
         display: "flex",
         justifyContent: "center",
@@ -48,7 +51,9 @@ const ReportModal = ({ open, onClose }) => {
       >
         <Box
           sx={{
-            background: "white",
+            background: theme.palette.background.default,
+            color: theme.palette.text.primary,
+
             padding: 2,
             borderRadius: 2,
             width: "auto",
@@ -60,7 +65,7 @@ const ReportModal = ({ open, onClose }) => {
               display: "flex",
               alignItems: "center",
               fontWeight: "bold",
-                          color: "#283593",
+              color: "#283593",
             }}
           >
             <Announcement fontSize="large" />
