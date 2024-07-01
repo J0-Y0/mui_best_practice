@@ -1,3 +1,4 @@
+
 import {
   AppBar,
   Box,
@@ -21,6 +22,7 @@ const Navbar = () => {
     justifyContent: "space-between",
     alignItems: "center",
     fontSize: "larger",
+  
   });
 
   const LogoSection = styled(Box)({
@@ -30,7 +32,7 @@ const Navbar = () => {
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
     borderRadius: theme.shape.borderRadius,
     maxWidth: "50%",
-    padding: "0 5px",
+    padding: "2px 5px",
     backgroundColor: "lightBlue",
     "&:hover": {
       backgroundColor: "white",
@@ -47,7 +49,7 @@ const Navbar = () => {
     alignItems: "center",
   }));
   return (
-    <StyledAppBar sx={{ p: 1 }} position="sticky">
+    <StyledAppBar sx={{ p: 2 }} position="sticky">
       <LogoSection>
         <GroupWorkIcon />
         <Typography
@@ -111,8 +113,8 @@ const Navbar = () => {
               <Badge badgeContent={4} color="error">
                 <Mail />
               </Badge>
-            </MenuItem>
-         
+            </MenuItem>{" "}
+
           </Box>
           <MenuItem>Profile</MenuItem>
           <MenuItem>My account</MenuItem>
