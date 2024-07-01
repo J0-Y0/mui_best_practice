@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Feed from "./components/Feed";
 import Box from '@mui/material/Box';
 import { Stack } from "@mui/material";
+import NewPost from "./components/NewPost";
 function App() {
 
   return (
@@ -14,6 +15,7 @@ function App() {
         <Feed flex={4}></Feed>
         <Rightbar flex={2}></Rightbar>
       </Stack>
+      <NewPost></NewPost>
     </Box>
   );
 }

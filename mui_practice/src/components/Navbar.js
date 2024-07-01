@@ -52,9 +52,9 @@ const Navbar = () => {
     <StyledAppBar sx={{ p: 2 }} position="sticky">
       <LogoSection>
         <GroupWorkIcon />
-        <Typography
+        <Typography 
+          fontWeight={700}
           sx={{
-            fontWeight: "bold",
             display: { xs: "none", sm: "block" },
           }}
         >
@@ -103,7 +103,7 @@ const Navbar = () => {
             horizontal: "left",
           }}
         >
-          <Box sx={{display:"flex"}}>
+          <Box sx={{ display: "flex" }}>
             <MenuItem>
               <Badge badgeContent={4} color="error">
                 <Mail />
@@ -114,7 +114,6 @@ const Navbar = () => {
                 <Mail />
               </Badge>
             </MenuItem>{" "}
-
           </Box>
           <MenuItem>Profile</MenuItem>
           <MenuItem>My account</MenuItem>
