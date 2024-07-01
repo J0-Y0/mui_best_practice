@@ -13,68 +13,70 @@ import { Bookmark, Home, LocalActivity, ModeNight, PostAdd, RssFeed, Settings } 
 export default function Sidebar({ flex }) {
   return (
     <Box sx={{ p: 2, display: { xs: "none", sm: "block" } }} flex={flex}>
-      <List>
-        <ListItem disablePadding>
-          <ListItemButton href="#">
-            <ListItemIcon>
-              <Home />
-            </ListItemIcon>
-            <ListItemText primary="Home" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton href="#">
-            <ListItemIcon>
-              <PostAdd />{" "}
-            </ListItemIcon>
-            <ListItemText primary="My posts" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton href="#">
-            <ListItemIcon>
-              <Bookmark />
-            </ListItemIcon>
-            <ListItemText primary="Saved Posts" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton href="#">
-            <ListItemIcon>
-              {" "}
-              <RssFeed />{" "}
-            </ListItemIcon>
-            <ListItemText primary="Connection" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton href="#">
-            <ListItemIcon>
-              <Settings />{" "}
-            </ListItemIcon>
-            <ListItemText primary="Setting" />
-          </ListItemButton>
-        </ListItem>
+      <Box position={"fixed"}>
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton href="#">
+              <ListItemIcon>
+                <Home />
+              </ListItemIcon>
+              <ListItemText primary="Home" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton href="#">
+              <ListItemIcon>
+                <PostAdd />{" "}
+              </ListItemIcon>
+              <ListItemText primary="My posts" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton href="#">
+              <ListItemIcon>
+                <Bookmark />
+              </ListItemIcon>
+              <ListItemText primary="Saved Posts" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton href="#">
+              <ListItemIcon>
+                {" "}
+                <RssFeed />{" "}
+              </ListItemIcon>
+              <ListItemText primary="Connection" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton href="#">
+              <ListItemIcon>
+                <Settings />{" "}
+              </ListItemIcon>
+              <ListItemText primary="Setting" />
+            </ListItemButton>
+          </ListItem>
 
-        <ListItem disablePadding>
-          <ListItemButton href="#">
-            <ListItemIcon>
-              <LocalActivity />{" "}
-            </ListItemIcon>
-            <ListItemText primary="Active log" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding sx={{ px: 0 }}>
-          <ListItemButton href="#">
-            <Switch
-              // checked={checked}
-              // onChange={handleChange}
-              inputProps={{ "aria-label": "controlled" }}
-            />
-            <ListItemText primary="Theme" />
-          </ListItemButton>
-        </ListItem>
-      </List>{" "}
+          <ListItem disablePadding>
+            <ListItemButton href="#">
+              <ListItemIcon>
+                <LocalActivity />{" "}
+              </ListItemIcon>
+              <ListItemText primary="Active log" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding sx={{ px: 0 }}>
+            <ListItemButton href="#">
+              <Switch
+                // checked={checked}
+                // onChange={handleChange}
+                inputProps={{ "aria-label": "controlled" }}
+              />
+              <ListItemText primary="Theme" />
+            </ListItemButton>
+          </ListItem>
+        </List>{" "}
+      </Box>
     </Box>
   );
 }

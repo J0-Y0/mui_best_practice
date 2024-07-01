@@ -9,7 +9,7 @@ function App() {
   return (
     <Box >
       <Navbar/>
-      <Stack direction="row" spacing={1} justifyContent="space-between">
+      <Stack direction="row" spacing={1} justifyContent="space-between" flexGrow={true} >
         <Sidebar flex={1} ></Sidebar>
         <Feed flex={4}></Feed>
         <Rightbar flex={2}></Rightbar>
