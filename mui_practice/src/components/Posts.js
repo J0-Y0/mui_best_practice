@@ -18,11 +18,13 @@ import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-import { Padding, ThumbUp } from "@mui/icons-material";
 import postImage from "../assets/postImage.jpg";
+import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 
 import ThumbDownOffAltOutlinedIcon from "@mui/icons-material/ThumbDownOffAltOutlined";
 import ThumbDownAltIcon from "@mui/icons-material/ThumbDownAlt";
+import { Box, Modal } from "@mui/material";
+import ReportModal from "./utils/ReportModal";
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -36,10 +38,14 @@ const ExpandMore = styled((props) => {
 
 export default function Posts({ flex }) {
   const [expanded, setExpanded] = React.useState(false);
+  const [modalOpen, setModalOpen] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+
+
 
   return (
     <Card sx={{ maxWidth: "100%", margin: 3 }}>
@@ -92,6 +98,9 @@ export default function Posts({ flex }) {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
+        <IconButton aria-label="report" onClick={() => setModalOpen(true)}>
+          <ReportGmailerrorredIcon />
+        </IconButton>
 
         <ExpandMore
           expand={expanded}
@@ -102,6 +111,7 @@ export default function Posts({ flex }) {
           <ExpandMoreIcon />
         </ExpandMore>
       </CardActions>
+
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Method:</Typography>
@@ -133,8 +143,18 @@ export default function Posts({ flex }) {
           </Typography>
         </CardContent>
       </Collapse>
+
+      {/* report modal */}
+
+      <ReportModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+      ></ReportModal>
     </Card>
   );
+
+
+  
 }
 
 
