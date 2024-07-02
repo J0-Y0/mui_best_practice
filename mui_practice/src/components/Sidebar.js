@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Bookmark, Home, LocalActivity, ModeNight, PostAdd, RssFeed, Settings } from "@mui/icons-material";
-export default function Sidebar({ flex }) {
+export default function Sidebar({ flex, onchange, checked }) {
   return (
     <Box sx={{ p: 2, display: { xs: "none", sm: "block" } }} flex={flex}>
       <Box position={"fixed"}>
@@ -19,6 +19,7 @@ export default function Sidebar({ flex }) {
             <ListItemButton href="#">
               <ListItemIcon>
                 <Home />
+                onchange
               </ListItemIcon>
               <ListItemText primary="Home" />
             </ListItemButton>
@@ -68,8 +69,8 @@ export default function Sidebar({ flex }) {
           <ListItem disablePadding sx={{ px: 0 }}>
             <ListItemButton href="#">
               <Switch
-                // checked={checked}
-                // onChange={handleChange}
+                checked={checked}
+                onChange={onchange}
                 inputProps={{ "aria-label": "controlled" }}
               />
               <ListItemText primary="Theme" />

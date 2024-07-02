@@ -14,6 +14,13 @@ function App() {
       mode:mode,
     }
   })
+  const handelThemChange = () => {
+    if (mode === 'dark') {
+      setMode('light')
+    } else {
+      setMode("dark");
+    }
+  }
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -29,7 +36,11 @@ function App() {
           justifyContent="space-between"
           flexGrow={true}
         >
-          <Sidebar flex={1}></Sidebar>
+          <Sidebar
+            checked={mode === "dark"}
+            onchange={handelThemChange}
+            flex={1}
+          ></Sidebar>
           <Feed flex={4}></Feed>
           <Rightbar flex={2}></Rightbar>
         </Stack>
