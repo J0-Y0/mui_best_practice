@@ -4,13 +4,12 @@ import {
   Box,
   Typography,
   InputBase,
-  Button,
   Badge,
   Avatar,
   Menu,
   MenuItem,
 } from "@mui/material";
-import { AccountCircle, CircleNotifications, Mail } from "@mui/icons-material";
+import { CircleNotifications, Mail } from "@mui/icons-material";
 import React, { useState } from "react";
 import GroupWorkIcon from "@mui/icons-material/GroupWork";
 import styled from "@emotion/styled";
@@ -52,7 +51,7 @@ const Navbar = () => {
     <StyledAppBar sx={{ p: 2 }} position="sticky">
       <LogoSection>
         <GroupWorkIcon />
-        <Typography 
+        <Typography
           fontWeight={700}
           sx={{
             display: { xs: "none", sm: "block" },
@@ -62,7 +61,7 @@ const Navbar = () => {
         </Typography>
       </LogoSection>
 
-      <StyledInputBase placeholder="Search" autoFocus="true" fullWidth="true" />
+      <StyledInputBase placeholder="Search" autoFocus={true} fullWidth={true} />
       <StyledNavCTAlg>
         <Badge badgeContent={4} color="error">
           <Mail />

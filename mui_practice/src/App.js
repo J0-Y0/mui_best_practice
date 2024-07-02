@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import { Stack, ThemeProvider, createTheme } from "@mui/material";
 import NewPost from "./components/NewPost";
 import { useState } from "react";
+
 function App() {
   const [mode, setMode] = useState("dark");
 

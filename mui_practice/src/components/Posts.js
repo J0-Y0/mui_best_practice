@@ -23,8 +23,10 @@ import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 
 import ThumbDownOffAltOutlinedIcon from "@mui/icons-material/ThumbDownOffAltOutlined";
 import ThumbDownAltIcon from "@mui/icons-material/ThumbDownAlt";
-import { Box, Modal } from "@mui/material";
+
 import ReportModal from "./utils/ReportModal";
+import { AddComment } from "@mui/icons-material";
+import { Tooltip } from "@mui/material";
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -77,31 +79,47 @@ export default function Posts({ flex }) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <Checkbox
-            icon={<FavoriteBorder />}
-            checkedIcon={<Favorite sx={{ color: "red" }} />}
-          />
-        </IconButton>
-        <IconButton aria-label="add to favorites">
-          <Checkbox
-            icon={<ThumbDownOffAltOutlinedIcon />}
-            checkedIcon={<ThumbDownAltIcon sx={{ color: "red" }} />}
-          />
-        </IconButton>
-        <IconButton>
-          <Checkbox
-            icon={<BookmarkBorderIcon />}
-            checkedIcon={<BookmarkIcon />}
-          />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <IconButton aria-label="report" onClick={() => setModalOpen(true)}>
-          <ReportGmailerrorredIcon />
-        </IconButton>
+        <Tooltip title="Like">
+          <IconButton aria-label="like" disableRipple={true}>
+            <Checkbox
+              icon={<FavoriteBorder />}
+              checkedIcon={<Favorite sx={{ color: "red" }} />}
+            />
+          </IconButton>
+        </Tooltip>
 
+        <Tooltip title="Dislike">
+          <IconButton aria-label="dislike" disableRipple={true}>
+            <Checkbox
+              icon={<ThumbDownOffAltOutlinedIcon />}
+              checkedIcon={<ThumbDownAltIcon sx={{ color: "red" }} />}
+            />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Save" disableRipple={true}>
+          <IconButton>
+            <Checkbox
+              icon={<BookmarkBorderIcon />}
+              checkedIcon={<BookmarkIcon />}
+            />
+          </IconButton>
+        </Tooltip>
+
+        <Tooltip title="comment">
+          <IconButton aria-label="Comment" onClick={handleExpandClick}>
+            <AddComment />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Report">
+          <IconButton aria-label="report" onClick={() => setModalOpen(true)}>
+            <ReportGmailerrorredIcon />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Share">
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+        </Tooltip>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}

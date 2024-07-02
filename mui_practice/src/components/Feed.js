@@ -7,6 +7,8 @@ export default function Feed({ flex }) {
       <Posts />
       <Posts />
       <Posts />
+      <Posts />
+      <Posts />
     </Box>
   );
 }

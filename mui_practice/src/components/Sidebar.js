@@ -1,6 +1,5 @@
 import {
   Box,
-  FormControlLabel,
   List,
   ListItem,
   ListItemButton,
@@ -9,7 +8,7 @@ import {
   Switch,
 } from "@mui/material";
 import React from "react";
-import { Bookmark, Home, LocalActivity, ModeNight, PostAdd, RssFeed, Settings } from "@mui/icons-material";
+import { Bookmark, Home, LocalActivity, PostAdd, RssFeed, Settings } from "@mui/icons-material";
 export default function Sidebar({ flex, setMode, mode }) {
   return (
     <Box sx={{ p: 2, display: { xs: "none", sm: "block" } }} flex={flex}>
@@ -19,7 +18,6 @@ export default function Sidebar({ flex, setMode, mode }) {
             <ListItemButton href="#">
               <ListItemIcon>
                 <Home />
-                onchange
               </ListItemIcon>
               <ListItemText primary="Home" />
             </ListItemButton>
